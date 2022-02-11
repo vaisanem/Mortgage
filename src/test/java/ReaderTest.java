@@ -12,7 +12,7 @@ public class ReaderTest {
     
     @Test
     public void parsesSuccessfully() throws FileNotFoundException, IOException, CsvException {
-        filename = "./src/test/resources/prospects.txt";
+        filename = "prospects.txt";
         reader = new Reader(filename);
         List<String[]> lines = reader.read();
         assertTrue(lines.get(0).length == 4);
@@ -20,7 +20,7 @@ public class ReaderTest {
     
     @Test
     public void parsingFailsWithWrongFormat() throws FileNotFoundException, IOException, CsvException {
-        filename = "./src/test/resources/format.txt";
+        filename = "format.txt";
         reader = new Reader(filename);
         List<String[]> lines = reader.read();
         assertTrue(lines.get(0).length != 4);

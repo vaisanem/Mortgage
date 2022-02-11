@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException, IOException, CsvException {
-        final String filename = "./src/main/resources/prospects.txt";
+        final String filename = "prospects.txt";
         ArrayList<Customer> customers = getCustomers(filename);
         for (int i = 1; i <= customers.size(); i++) {
             Customer one = customers.get(i-1);

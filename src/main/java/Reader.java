@@ -1,9 +1,8 @@
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.List;
 
 public class Reader {
@@ -11,8 +10,7 @@ public class Reader {
     private CSVReader reader;
 
     public Reader(String filename) throws FileNotFoundException {
-        File file = new File(filename);
-        this.reader = new CSVReader(new FileReader(file));
+        this.reader = new CSVReader(new InputStreamReader(this.getClass().getResourceAsStream(filename)));
     }
     
     public List<String[]> read() throws IOException, CsvException {
